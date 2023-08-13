@@ -6,9 +6,9 @@ setup:
 
 
 quality_checks:
-	isort src/
-	black src/
-	pylint --rcfile=pyproject.toml --recursive=y src/
+	isort .
+	black .
+	pylint --rcfile=pyproject.toml --recursive=y .
 
 
 integration_test: quality_checks

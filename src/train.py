@@ -2,17 +2,17 @@ import os
 import pickle
 import pathlib
 
-import numpy as np
-import joblib
+import matplotlib
+
+matplotlib.use("Agg")  # For macOS
+
 import mlflow
 import pandas as pd
-from joblib import dump
 from prefect import flow, task
 from mlflow.entities import ViewType
 from mlflow.tracking import MlflowClient
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
-from prefect.artifacts import create_markdown_artifact
 
 import config
 
@@ -32,10 +32,6 @@ mlflow.set_tracking_uri("http://127.0.0.1:5000")
 mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.sklearn.autolog(log_models=True)
 
-import matplotlib
-
-matplotlib.use("Agg")  # For macOS
-
 
 def save_results(df, y_pred, output_file):
     df_result = pd.DataFrame()
@@ -46,7 +42,7 @@ def save_results(df, y_pred, output_file):
 
 
 def get_paths(season: int):
-    #input_file = os.path.join(config.OUTPUT_PATH, "test.parquet")
+    # input_file = os.path.join(config.OUTPUT_PATH, "test.parquet")
     pathlib.Path("data/output").mkdir(exist_ok=True)
     output_file = f"data/output/nba-{season}-season-predictions-reference.parquet"
 
@@ -56,7 +52,7 @@ def get_paths(season: int):
 @task(log_prints=True)
 def train_and_log_model(data_path, params, predictors: list):
     train = pd.read_parquet(os.path.join(data_path, "train.parquet"))
-    output_file = get_paths(season = 2022)
+    output_file = get_paths(season=2022)
     trn = train[train["season"] < "2022"]
     val = train[train["season"] == "2022"]
 

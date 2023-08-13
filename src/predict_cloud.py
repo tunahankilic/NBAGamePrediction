@@ -1,13 +1,8 @@
 import os
 import sys
 import pickle
-import pathlib
-
-# from prefect import task, flow, get_run_logger
 from pathlib import Path
-from datetime import datetime
 
-import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score
 
