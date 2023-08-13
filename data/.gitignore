@@ -1,0 +1,5 @@
+# Ignore specific file types
+*.zip
+*.rar
+*.tar.gz
+*.html
