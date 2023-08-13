@@ -6,9 +6,9 @@ setup:
 
 
 quality_checks:
-	isort .
-	black .
-	pylint --rcfile=pyproject.toml --recursive=y .
+	isort src/
+	black src/
+	pylint --rcfile=pyproject.toml --recursive=y src/
 
 
 integration_test: quality_checks
@@ -35,7 +35,7 @@ tune_hyperparams:
 # Default num_trials=20
 
 
-train: 
+train:
 	pipenv run python src/train.py
 
 
@@ -62,4 +62,5 @@ monitor:
 
 
 # TO RUN:
+
 # make setup

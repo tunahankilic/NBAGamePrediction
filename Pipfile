@@ -30,6 +30,7 @@ beautifulsoup4 = "*"
 lxml = "*"
 playwright = "*"
 localstack = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.11"
