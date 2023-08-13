@@ -1,0 +1,54 @@
+# macOS system files
+.DS_Store
+
+#project files
+mlruns/
+mlartifacts/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Compiled files
+*.class
+*.war
+*.jar
+*.zip
+*.tar.gz
+*.html
+
+# Log files
+*.log
+
+# Virtual environment directories
+venv/
+env/
+env_bak/
+*.venv/
+*.env/
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Compiled binaries or executables
+*.exe
+*.dll
+*.so
+*.out
+*.app
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.bak
+
+# macOS thumbnail cache files
+._*

@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+requests = "*"
+pyarrow = "*"
+scikit-learn = "*"
+optuna = "*"
+mlflow = "*"
+prefect = "*"
+matplotlib = "*"
+boto3 = "*"
+awscli = "*"
+s3fs = "*"
+evidently = "*"
+psycopg = "*"
+psycopg-binary = "*"
+psycopg2-binary = "*"
+
+[dev-packages]
+ipykernel = "*"
+pytest = "*"
+isort = "*"
+black = "*"
+pre-commit = "*"
+beautifulsoup4 = "*"
+lxml = "*"
+playwright = "*"
+localstack = "*"
+
+[requires]
+python_version = "3.11"
