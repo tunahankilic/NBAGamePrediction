@@ -1,11 +1,15 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
-
 PROJECT_PARENT_DIR="$(dirname "$SCRIPT_DIR")"
+SCRIPT_NAME="run.sh"
 
 # Set the path to the integration_test.py file
 INTEGRATION_TEST_FILE="$PROJECT_PARENT_DIR/tests/integration-test.py"
+
+
+# Make the file executable
+chmod +x $SCRIPT_NAME
 
 # Change directory to the parent project folder (where pipenv is used)
 cd "$SCRIPT_DIR/.."

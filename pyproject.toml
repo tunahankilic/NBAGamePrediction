@@ -8,13 +8,15 @@ disable = [
     "invalid-name",
     "too-few-public-methods",
     "import-error",
-    "wrong-import-position"
+    "wrong-import-position",
+    "line-too-long",
+    "not-context-manager"
 ]
 
 
 [tool.black]
 line-length = 88
-target-version = ['py39']
+target-version = ['py311']
 skip-string-normalization = true
 
 [tool.isort]

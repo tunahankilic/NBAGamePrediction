@@ -35,7 +35,7 @@ tune_hyperparams:
 # Default num_trials=20
 
 
-train:
+train: tune_hyperparams
 	pipenv run python src/train.py
 
 
@@ -51,16 +51,7 @@ deploy: build
 	docker run -it -v ./output/:/app/output/ nbagameprediction:v1 2023
 
 
-# DOCKER COMPOSE SHOULD BE UP AND RUNNING: docker-compose -f monitoring/docker-compose.yaml up
 # Prefect must be up and running
 monitor:
-	pipenv run python monitoring/evidently_monitoring.py
-
+	bash monitoring/run.sh
 # DOCKER COMPOSE SHOULD BE DOWN AFTER MONITORING: docker-compose -f monitoring/docker-compose.yaml down
-
-
-
-
-# TO RUN:
-
-# make setup

@@ -3,6 +3,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 PROJECT_PARENT_DIR="$(dirname "$SCRIPT_DIR")"
 INTEGRATION_TEST_FILE="$PROJECT_PARENT_DIR/tests/integration-test.py"
+SCRIPT_NAME="run_cloud.sh"
 
 cd "$(dirname "$0")"
 
@@ -10,6 +11,8 @@ export BUCKET_NAME="nba-predictions"
 export OUTPUT_FILE_PATTERN="s3://${BUCKET_NAME}/out/nba-{season}-season-predictions.parquet"
 export S3_ENDPOINT_URL="http://localhost:4566/"
 
+# Make the file executable
+chmod +x $SCRIPT_NAME
 
 # Getting localstack up
 docker-compose up -d
